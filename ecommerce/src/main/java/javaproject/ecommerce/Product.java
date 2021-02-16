@@ -20,19 +20,39 @@ public class Product {
 	@Column(name ="brand")
 	private String Brand;
 	
+	@Column (name="Stock")
+	private Integer stock;
+	
 	public Product() {
 		super();
 	}
 
-	public Product( String name, Double price, String colour, String brand) {
+	public Product( String name, Double price, String colour, String brand,Integer stock) {
 		super();
 		
 		this.name = name;
 		this.price = price;
 		this.colour = colour;
-		Brand = brand;
+		this.Brand = brand;
+		this.stock=stock;
 	}
 	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public Integer getStock() {
+		return stock;
+	}
+
+	public void setStock(Integer stock) {
+		this.stock = stock;
+	}
+
 	public String getName() {
 		return name;
 	}
@@ -60,8 +80,10 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return "Product [name=" + name + ", price=" + price + ", colour=" + colour + ", Brand=" + Brand + "]";
+		return " name=" + name + "\n price=" + price + "\n colour=" + colour + "\n Brand=" + Brand + "\n stock="
+				+ stock ;
 	}
+
 	
 	
 

@@ -25,7 +25,7 @@ public class ProductDAO {
         session.save(product);
         transaction.commit();
         session.close();
-        
+          
 	}
 	public List<Product> list() {
 		Session session = sf.openSession();
@@ -33,7 +33,7 @@ public class ProductDAO {
 	    Query q = session.createQuery("from Product");
 	    List<Product> us = q.list();       
 	    session.close(); 
-		return null;
+		return us;
 	}
 	public void update(Product product) {
 		Session session = sf.openSession();
